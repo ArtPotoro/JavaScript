@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baigiamasis</title>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-color: aliceblue;
+        }
+        
+        h1 {
+            background-color: aliceblue;
+        }
+        
+        .pirmas {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+            
+            
+        }
+        .antras {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+        }
+        .trecias {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+        }
+        .ketvirtas {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+        }
+        .penktas {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+        .uzduotys {
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            width: 80%;
+            height: auto;
+            position: relative;
+            background-color: aliceblue;
+            color: darkcyan;
+            display: flex;
+            flex-direction: column;
+        }
+        .motionbox {
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+            display: block;
+              
+        }
+        .visual {
+            width: 200px;
+            height: 200px;
+            background-color: darkblue;
+            
+        }
+        .largerWidth {
+            width: 50%;
+            
+            background-color: darkblue;
+            
+           
+        }
+        .largerHeight {
+            height: 400px;
+            
+            background-color: darkblue;  
+            
+        }
+        .centerPosition {
+            display: flex;
+            align-self: center;
+            
+        }
+        .randomPosition {
+            position: relative;
+            bottom: -110px;
+            display: block;
+        }
+        button {
+            background-color: black;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20%;
+            justify-content: space-around;
+            border-color: darkcyan;
+        }
+        li {
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: darkcyan;
+        }
+        a {
+            background-color: darkcyan;
+            border-color: aliceblue;
+        }
+        .color {
+            background-color: #888;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+        }
+        .menuItem {
+            display: block;
+            margin: 2px 4px;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menuItem:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            position: fixed;
+            z-index: 100;
+            top: 10px;
+            right: 10px;
+            padding: 4px;
+            border: darkcyan solid 1px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .closeIcon {
+            display: none;
+        }
+
+        .menu {
+            position: fixed;
+            transform: translateX(100%);
+            transition: transform 0.2s;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            background: darkcyan;
+            color: white;
+            list-style: none;
+            padding-top: 40px;
+        }
+
+        .showMenu {
+            transform: translateX(0);
+        }
+        input {
+            width: 20%;
+            color: aliceblue;
+            align-self: center;
+        }
+        label {
+            background-color: aliceblue;
+            
+        }
+        table {
+            background-color: aliceblue;
+            color: aliceblue;
+            display: none;
+        }
+        form {
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="uzduotys">
+        <h1>Uzduotys</h1>
+        <p>1. Paspaudus ant mygtuko, puslapyje esantis div atsiranda/pranyksta</p>
+        <p>2. Turit vieną div, su aukščiu,pločiu ir spalva bei 4 mygtukus, su kuriais galit valdyt sukurto div savybes: plotis, aukstis, centravimas ir pozicija</p>
+        <p>3. Burgeris ir šoninis Meniu - paspaudus ant burgerio gražiai išvažiuoja šoninis meniu.</p>
+        <p>4. Bent 4 div elementai, pradžioje visi juodos spalvos, paspaudus bent ant vieno iš jų, yra pakeičiamos spalvos visiems. Spalvos generuojamos random.</p>
+        <p>5. Formoje pildoma "vardas", "pavardė" ir "gimimo data". Duomneys kaupiami lentelėje. Stulpeliai: Eil. Nr., Vardas, Pavardė, Amžius.</p>
+    </div>
+    <div class="pirmas">
+        <h1>1</h1>
+        <button onclick="showBox()">Click Me</button>
+        <div class="motionbox"></div>
+    </div>
+
+    <div class="antras">
+        <h1>2</h1>
+        <div>
+        <button id="boxP" onclick="toggleWidth()">Plotis</button>
+        <button id="boxA" onclick="toggleHeight()">Aukstis</button>
+        <button class="Centravimas" onclick="centerPosition()">Centravimas</button>
+        <button class="Pozicija" onclick="randomPosition()">Pozicija</button>
+        </div>
+        <div class="visual"></div>
+    </div>
+
+    <div class="trecias">
+        <h1>3</h1>
+        <ul class="menu">
+            <li><a class="menuItem" href="#">Home</a></li>
+            <li><a class="menuItem" href="#">Profile</a></li>
+            <li><a class="menuItem" href="#">About</a></li>
+            <li><a class="menuItem" href="#">Contacts</a></li>
+          </ul>
+          <button class="hamburger">
+            <i class="menuIcon material-icons">menu</i>
+            <i class="closeIcon material-icons">close</i>
+          </button>
+    </div>
+
+    <div class="ketvirtas">
+        <h1>4</h1>
+        <button id="spalvos">Recolor</button>
+        <div onclick="recolor(event)">
+            <div class="color 1" onclick="recolor(event)"></div>
+            <div class="color 2" onclick="recolor(event)"></div>
+            <div class="color 3" onclick="recolor(event)"></div>
+            <div class="color 4" onclick="recolor(event)"></div>
+            <div class="color 5" onclick="recolor(event)"></div>
+         </div>
+    </div>
+
+    <div class="penktas">
+        <h1>5</h1>
+        <form action="">
+            <label for="name">Name</label>
+            <input id="name" class="name" type="text" placeholder="Name">
+            <label for="lastname">Last Name</label>
+            <input id="lastname" class="lastname" type="text" placeholder="Last Name">
+            <label for="birthday">Date of Birth</label>
+        <!-- <input class="birth" type="date" placeholder="Date of Birth"> -->
+            <input type="year" id="birthday" name="birthday" placeholder="YYYY">
+        
+
+        </form>
+        
+        <input type="submit" onclick="showTable(); addCourse(); fnCalculateAge()">
+        <input type="reset">
+        <table class="myTable" id="myTable" border="1">
+            <tr id="row">
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Birthday</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body>
+</html>
