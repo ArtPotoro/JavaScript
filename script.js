@@ -96,6 +96,16 @@ function showTable() {
   }
 } 
 
+function hideTable() {
+  let t = document.getElementsByClassName("myTable")[0];
+  if (t.style.display !== "inline-table") {
+    t.style.display = "none";
+  } else {
+    t.style.display = "none";
+  }
+} 
+
+
 // const table = document.querySelector('table');
 // const tbody = table.querySelector('tbody');
 
