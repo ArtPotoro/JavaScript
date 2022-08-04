@@ -92,7 +92,7 @@ function showTable() {
   if (t.style.display !== "none") {
     t.style.display = "inline-table";
   } else {
-    t.style.display = "none";
+    t.style.display = "inline-table";
   }
 } 
 
