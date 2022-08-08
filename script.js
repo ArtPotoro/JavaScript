@@ -61,7 +61,7 @@ menuItems.forEach(
 let keisti = 'rgb(' + rand() + ',' + rand() + ',' + rand() + ')';
 let boxes = document.querySelectorAll(".color");
 let spausti = document.getElementById("spalvos");
-
+//let visi = document.getElementById("visi").multiple;
 
 spausti.addEventListener("click", function(){
   for (let i=0; i<boxes.length; i++) {
@@ -69,43 +69,125 @@ spausti.addEventListener("click", function(){
     boxes[i].style.backgroundColor = keisti
   } 
 })
-function recolor(event) {
+function recolor(event) { 
     event.target.style.backgroundColor = randomColor()
-
 }
 function randomColor() {
-    return 'rgb(' + rand() + ',' + rand() + ',' + rand() + ')';
-    
+    return 'rgb(' + rand() + ',' + rand() + ',' + rand() + ')';   
 }
-// return 'rgb(${rand()}, ${rand()}, ${rand()})'
 
 function rand() {
     return Math.floor(Math.random() * 256);
 }
+function reOnClick(divD) {
+    let divs = document.getElementsByClassName("color");
+      for (let i = 0; i < divs.length; i++) {
+          if (divs[i].id == divD) {
+             divs[i].style.backgroundColor = randomColor();
+          }
+          else {
+             divs[i].style.backgroundColor = randomColor();
+          }
+          } 
+}
+function convertRgb(rgb) {
+  let separator = rgb.indexOf(",") > -1 ? "," : " ";
+  rgb = rgb.substr(4).split(")")[0].split(separator);
+  let r = (+rgb[0]).toString(16),
+    g = (+rgb[1]).toString(16),
+    b = (+rgb[2]).toString(16);
+  if (r.length == 1)
+    r = "0" + r;
+  if (g.length == 1)
+    g = "0" + g;
+  if (b.length == 1)
+    b = "0" + b;
+  return "#" + r + g + b;{
+    
+  }
+  
+}
 
 
+// function rgbT() {
+//   let rgbText = getElementById("rgbText");
+//   let style = getElementById("visi").value;
+//   //let style = window.getComputedStyle(element,"");
+//   let spanText = style.getPropertyValue("background-color");
+  
+//   //let spanText = document.getElementById("visi").value;
+//   rgbText.innerHTML = spanText;
+// }
 
 //---------------------------------------5-------------------------------------//
+let table = document.getElementsByClassName("myTable")[0];
+let Table = document.getElementById("myTable");
+let tbody = document.getElementsByTagName("tbody");
+
 
 function showTable() {
-  let t = document.getElementsByClassName("myTable")[0];
-  if (t.style.display !== "none") {
-    t.style.display = "inline-table";
+  
+  if (table.style.display !== "none") {
+    table.style.display = "inline-table";
   } else {
-    t.style.display = "inline-table";
+    table.style.display = "inline-table";
   }
 } 
 
 function hideTable() {
-  let t = document.getElementsByClassName("myTable")[0];
-  if (t.style.display !== "inline-table") {
-    t.style.display = "none";
+
+  if (table.style.display !== "inline-table") {
+    table.style.display = "none";
   } else {
-    t.style.display = "none";
+    table.style.display = "none";
   }
 } 
 
+function resetInput(){  
+  document.getElementById("myForm").reset();  
+}  
 
+function clearTable() {
+  // let new_tbody = document.createElement('tbody');
+  // populate_with_new_rows(new_tbody);
+  // old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
+  //for (let i = 0; i > td.length; i++) {
+  // document.getElementsByTagName("td").remove();
+  // Table.innerHTML = document.getElementById("myTable").innerHTML;
+  //document.getElementById("myTable").deleteRow(i);
+  let tableHeaderRowCount = 1;
+  let table = document.getElementById('myTable');
+  let rowCount = table.rows.length;
+  for (let i = tableHeaderRowCount; i < rowCount; i++) {
+      table.deleteRow(tableHeaderRowCount);
+  }
+}
+
+function addCourse() {
+  
+  let row = myBody.insertRow();
+  let cell1 = row.insertCell(0);
+  let cell2 = row.insertCell(1);
+  let cell3 = row.insertCell(2);
+
+  let name = document.getElementById("name").value;
+  let lastname = document.getElementById("lastname").value;
+  let birthday = document.getElementById("birthday").value;
+  let amzius = fnCalculateAge()
+  
+  cell1.innerHTML = name;
+  cell2.innerHTML = lastname;
+  cell3.innerHTML = amzius;
+}
+
+function fnCalculateAge(){
+  let userDateinput = document.getElementById("birthday").value;  
+  let birthDate = new Date(userDateinput);
+  let difference = Date.now() - birthDate.getTime(); 
+  let ageDate = new Date(difference); 
+  let calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+  return calculatedAge
+}
 // const table = document.querySelector('table');
 // const tbody = table.querySelector('tbody');
 
@@ -129,37 +211,11 @@ function hideTable() {
 //   tr.append(td(col4));
 //   return tr;
 // }
-function fnCalculateAge(){
-
-  let userDateinput = document.getElementById("birthday").value;  
-
-
-  let birthDate = new Date(userDateinput);
- 
-  let difference=Date.now() - birthDate.getTime(); 
-  let ageDate = new Date(difference); 
-  let calculatedAge =   Math.abs(ageDate.getUTCFullYear() - 1970);
-  return calculatedAge
-  
-}
 
 
 
-function addCourse() {
-  let i = 1 ;
-  
-  let row = myTable.insertRow(i);
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  let cell3 = row.insertCell(2);
 
-  let name = document.getElementById("name").value;
-  let lastname = document.getElementById("lastname").value;
-  let birthday = document.getElementById("birthday").value;
-  let amzius = fnCalculateAge()
-  console.log(amzius);
-  cell1.innerHTML = name;
-  cell2.innerHTML = lastname;
-  cell3.innerHTML = amzius;
-}
-
+//  let tbody = document.getElementsByTagName("tbody");
+// let listRow = document.getElementsByTagName("td");
+// document.getElementsByTagName("td")[i].remove();
+// return 'rgb(${rand()}, ${rand()}, ${rand()})'

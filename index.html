@@ -15,13 +15,16 @@
             box-sizing: border-box;
         }
         body {
-            max-width: 80%;
+            /* max-width: 80%; */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             position: relative;
             background-color: aliceblue;
+        }
+        div {
+            margin: 50px;
         }
         
         h1 {
@@ -228,6 +231,9 @@
             display: flex;
             flex-direction: column;
         }
+        span {
+            color: aliceblue;
+        }
         
     </style>
 </head>
@@ -275,17 +281,17 @@
         <h1>4</h1>
         <button id="spalvos">Recolor</button>
         <div onclick="recolor(event)">
-            <div class="color 1" onclick="recolor(event)"></div>
-            <div class="color 2" onclick="recolor(event)"></div>
-            <div class="color 3" onclick="recolor(event)"></div>
-            <div class="color 4" onclick="recolor(event)"></div>
-            <div class="color 5" onclick="recolor(event)"></div>
+            <div id="visi 1" class="color 1" onclick="reOnClick('visi 1'); convertRgb('visi 1')"><span id="rgbText"></span></div>
+            <div id="visi 2" class="color 2" onclick="reOnClick('visi 2')"><span id="rgbText"></span></div>
+            <div id="visi 3" class="color 3" onclick="reOnClick('visi 3')"><span id="rgbText"></span></div>
+            <div id="visi 4" class="color 4" onclick="reOnClick('visi 4')"><span id="rgbText"></span></div>
+            <div id="visi 5" class="color 5" onclick="reOnClick('visi 5')"><span id="rgbText"></span></div>
          </div>
     </div>
 
     <div class="penktas">
         <h1>5</h1>
-        <form action="">
+        <form action="" id="myForm">
             <label for="name">Name</label>
             <input id="name" class="name" type="text" placeholder="Name">
             <label for="lastname">Last Name</label>
@@ -298,13 +304,20 @@
         </form>
         
         <input type="submit" onclick="showTable(); addCourse(); fnCalculateAge()">
-        <input type="reset" onclick="hideTable()">
+        <input type="reset" onclick="hideTable(); resetInput(); clearTable()">
         <table class="myTable" id="myTable" border="1">
-            <tr id="row">
-                <th>Name</th>
-                <th>Last Name</th>
-                <th>Birthday</th>
-            </tr>
+            <thead>
+                <tr id="row">
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody id="myBody" class="myBody">
+
+            </tbody>
+            
+
         </table>
     </div>
 
