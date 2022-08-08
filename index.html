@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baigiamasis</title>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inspiration&display=swap" rel="stylesheet"> 
 
     <style>
         * {
@@ -22,6 +24,8 @@
             text-align: center;
             position: relative;
             background-color: aliceblue;
+            font-family: 'Bebas Neue', cursive;
+            
         }
         div {
             margin: 50px;
@@ -29,6 +33,12 @@
         
         h1 {
             background-color: aliceblue;
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            margin: 50px;
+            color: darkcyan;
         }
         
         .pirmas {
@@ -87,6 +97,7 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 50px;
+            padding: 10px;
         }
         .uzduotys {
             border-radius: 50px;
@@ -106,12 +117,16 @@
             height: 200px;
             background-color: darkcyan;
             display: block;
+            transform: translateX(0);
+            transition: transform 0.2s;
               
         }
         .visual {
             width: 200px;
             height: 200px;
             background-color: darkblue;
+            transform: translateX(0);
+            transition: transform 0.2s;
             
         }
         .largerWidth {
@@ -234,17 +249,30 @@
         span {
             color: aliceblue;
         }
+        p {
+            margin: 15px;
+            border-radius: 50px;
+            box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -webkit-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            -moz-box-shadow: 0px -1px 41px 0px rgba(26,99,185,1);
+            padding: 10px;
+            font-size: 30px;  
+        }
         
     </style>
 </head>
 <body>
     <div class="uzduotys">
         <h1>Uzduotys</h1>
-        <p>1. Paspaudus ant mygtuko, puslapyje esantis div atsiranda/pranyksta</p>
-        <p>2. Turit vieną div, su aukščiu,pločiu ir spalva bei 4 mygtukus, su kuriais galit valdyt sukurto div savybes: plotis, aukstis, centravimas ir pozicija</p>
-        <p>3. Burgeris ir šoninis Meniu - paspaudus ant burgerio gražiai išvažiuoja šoninis meniu.</p>
-        <p>4. Bent 4 div elementai, pradžioje visi juodos spalvos, paspaudus bent ant vieno iš jų, yra pakeičiamos spalvos visiems. Spalvos generuojamos random.</p>
-        <p>5. Formoje pildoma "vardas", "pavardė" ir "gimimo data". Duomneys kaupiami lentelėje. Stulpeliai: Eil. Nr., Vardas, Pavardė, Amžius.</p>
+        <p> 1. Paspaudus ant mygtuko, puslapyje esantis div atsiranda/pranyksta
+        <br>
+            2. Turit vieną div, su aukščiu,pločiu ir spalva bei 4 mygtukus, su kuriais galit valdyt sukurto div savybes: plotis, aukstis, centravimas ir pozicija
+        <br>
+            3. Burgeris ir šoninis Meniu - paspaudus ant burgerio gražiai išvažiuoja šoninis meniu.
+        <br>
+            4. Bent 4 div elementai, pradžioje visi juodos spalvos, paspaudus bent ant vieno iš jų, yra pakeičiamos spalvos visiems. Spalvos generuojamos random.
+        <br>
+            5. Formoje pildoma "vardas", "pavardė" ir "gimimo data". Duomneys kaupiami lentelėje. Stulpeliai: Eil. Nr., Vardas, Pavardė, Amžius.</p>
     </div>
     <div class="pirmas">
         <h1>1</h1>
@@ -281,7 +309,7 @@
         <h1>4</h1>
         <button id="spalvos">Recolor</button>
         <div onclick="recolor(event)">
-            <div id="visi 1" class="color 1" onclick="reOnClick('visi 1'); convertRgb('visi 1')"><span id="rgbText"></span></div>
+            <div id="visi 1" class="color 1" onclick="reOnClick('visi 1')"><span id="rgbText"></span></div>
             <div id="visi 2" class="color 2" onclick="reOnClick('visi 2')"><span id="rgbText"></span></div>
             <div id="visi 3" class="color 3" onclick="reOnClick('visi 3')"><span id="rgbText"></span></div>
             <div id="visi 4" class="color 4" onclick="reOnClick('visi 4')"><span id="rgbText"></span></div>

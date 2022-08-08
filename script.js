@@ -66,7 +66,8 @@ let spausti = document.getElementById("spalvos");
 spausti.addEventListener("click", function(){
   for (let i=0; i<boxes.length; i++) {
     let keisti = 'rgb(' + rand() + ',' + rand() + ',' + rand() + ')';
-    boxes[i].style.backgroundColor = keisti
+    boxes[i].style.backgroundColor = keisti;
+    boxes[i].innerHTML = keisti;
   } 
 })
 function recolor(event) { 
@@ -79,14 +80,17 @@ function randomColor() {
 function rand() {
     return Math.floor(Math.random() * 256);
 }
+const color = document.getElementsById("rgbText");
 function reOnClick(divD) {
     let divs = document.getElementsByClassName("color");
       for (let i = 0; i < divs.length; i++) {
           if (divs[i].id == divD) {
-             divs[i].style.backgroundColor = randomColor();
+              divs[i].style.backgroundColor = randomColor(); 
+              divs[i].innerText = divs[i].style.backgroundColor;
           }
           else {
-             divs[i].style.backgroundColor = randomColor();
+             divs[i].style.backgroundColor = randomColor(); 
+             divs[i].innerText = divs[i].style.backgroundColor;
           }
           } 
 }
